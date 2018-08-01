@@ -26,29 +26,3 @@ The software license is mixed GPL v2/New BSD.
 
 ![Screenshot 1](img/screenshot1.png)
 ![Screenshot 2](img/screenshot2.png)
-
-## Post-Mortem
-### Challenges
-* Porting MFC/Win32 to Qt
-* Modularising the original code into reusable components, as a requirement to
-  allow for many UI frontends.
-  (the original kept all .cpp files in a single directory!)
-* Lingering undefined behavior created bugs in the Linux version
-
-### Coding Mistakes in FamiTracker CX
-* The "thread pool" is not actually a thread pool, but a message queue.
-* Using the `type_t` notation on structs and not typedefs.
-* Using global state to keep document data for the Qt GUI.
-* The sound sink implementations abused inheritence, leading to many audio bugs.
-
-### If this project were attempted again
-Closer coordination with the original author (jsr) to organize the code base to
-become reusable. There would have been much to ask from jsr, such as keeping a
-development branch available at all times through Git or some other DVCS.
-That alone I think would have solved many of the problems being addressed
-by this project.
-
-Ultimately, many open source projects suffer from organizational issues.
-This is a primary reason I think forks of projects are created instead of
-everyone contributing to a single project. That's why I created a fork
-for FamiTracker CX, but it was probably a misplaced reason.
