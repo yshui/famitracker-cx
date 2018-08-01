@@ -85,7 +85,7 @@ QT4_WRAP_CPP(MOC_SRC ${MOC_INC})
 
 add_executable(famitracker-qt WIN32 ${SRC} ${RES_SRC} ${MOC_SRC} ${MOC_INC} ${UI_SRC})
 target_link_libraries(famitracker-qt fami-core)
-target_link_libraries(famitracker-qt ${QT_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries(famitracker-qt ${QT_LIBRARIES} ${Boost_LIBRARIES} boost_thread)
 
 if (WIN32)
 	install(TARGETS famitracker-qt

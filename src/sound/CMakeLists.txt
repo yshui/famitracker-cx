@@ -8,7 +8,7 @@ set(SOUNDTHREAD
 
 if ("${CMAKE_SYSTEM}" MATCHES "Linux")
 	find_package(ALSA REQUIRED)
-	include(${ALSA_INCLUDE_DIR})
+	include_directories(${ALSA_INCLUDE_DIR})
 
 	add_library(famicx-core-alsa-sound MODULE alsa.cpp alsa.hpp ${SOUNDTHREAD})
 	target_link_libraries(famicx-core-alsa-sound ${ALSA_LIBRARY})

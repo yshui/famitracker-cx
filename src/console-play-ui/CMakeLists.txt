@@ -5,7 +5,7 @@ include_directories("..")
 setup_boost()
 
 add_executable(famitracker-play ../parse_arguments.cpp ../parse_arguments.hpp ../defaults.hpp main.cpp)
-target_link_libraries(famitracker-play fami-core)
+target_link_libraries(famitracker-play fami-core boost_thread)
 
 if (WIN32)
 	install(TARGETS famitracker-play
